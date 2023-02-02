@@ -45,6 +45,25 @@ a {
 button, input, textarea, select {
     font: inherit;
 } 
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+img, video, canvas {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    border: none;
+    outline: none;
+}
 /* ----- BASE STYLES ----- */
 
 /* ----- TYPOGRAPHY ----- */
