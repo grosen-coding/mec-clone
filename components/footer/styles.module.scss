@@ -27,6 +27,8 @@
         }
     }
 
+
+    // LINKS
     img {
         width: 140px;
         height: 40px;
@@ -34,7 +36,7 @@
     }
 
     h3 {
-        font-size: 12px;
+        font-size: 1rem;
         font-weight: 700;
         color: #222;
     }
@@ -53,7 +55,7 @@
             }
 
             li {
-                font-size: 12px;
+                font-size: .8rem;
 
                 a {
                     color: #666;
@@ -67,23 +69,36 @@
         }
     }
 
+
+    // SOCIALS
     &__socials {
         grid-area: socials;
 
+        h3 {
+            text-align: center;
+        }
+
         section {
+            padding: 5px;
             ul {
                 margin-top: 10px;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 gap: 1rem;
 
                 li {
                     font-size: 2rem;
                     color: #666;
 
-                    &:hover {
-                        color: $color-green;
+                    a {
+                        font-size: 1.5rem;
+                        color: rgba(43, 102, 56, 0.5);
+                        &:hover {
+                            color: $color-green;
+                        }
                     }
+
                 }
             }
         }
