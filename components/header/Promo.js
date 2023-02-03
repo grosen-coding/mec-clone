@@ -6,7 +6,7 @@ function Promo() {
   return (
     <>
       <Link href="/browse">
-        <div className={styles.ad}>Promo Section</div>
+        <div className={styles.ad}></div>
       </Link>
     </>
   );

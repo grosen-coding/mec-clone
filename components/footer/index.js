@@ -1,7 +1,9 @@
 import React from "react";
 import Links from "./Links";
+import NewsLetter from "./NewsLetter";
 import Socials from "./Socials";
 import styles from "./styles.module.scss";
+import Copyright from "./Copyright";
 
 export default function Footer() {
   return (
@@ -9,6 +11,9 @@ export default function Footer() {
       <div className={styles.footer__container}>
         <Links />
         <Socials />
+        <NewsLetter />
+        {/* <Payment /> */}
+        <Copyright />
       </div>
     </footer>
   );

@@ -109,8 +109,16 @@
         margin-top: 10px;
     }
 
+
+    // NEWSLETTER
     &__newsletter {
+        // width: 50%;
+        margin: 0 auto;
         grid-area: newsletter;
+
+        @media (max-width: 800px) {
+            width: 80%;
+        }
 
         input {
             outline: none;
@@ -137,6 +145,8 @@
         }
     }
 
+
+    // PAYMENT
     &__payment {
         grid-area: payment;
     }
@@ -154,7 +164,17 @@
         }
     }
 
+
+    // COPYRIGHT
     &__copyright {
+
+        h4 {
+            font-size: .8rem;
+            font-weight: 700;
+            margin-bottom: .2rem;
+            color: #222;
+            text-align: center;
+        }
         grid-area: copyright;
 
         section {
@@ -166,6 +186,7 @@
         ul {
             display: flex;
             align-items: center;
+            justify-content: center;
             flex-wrap: wrap;
             column-gap: 2rem;
 
