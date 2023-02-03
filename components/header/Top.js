@@ -11,7 +11,7 @@ import UserMenu from "./UserMenu";
 export default function Top() {
   const [visible, setVisible] = useState(false);
 
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   return (
     <div className={styles.top}>
       <div className={styles.top__container}>
@@ -43,7 +43,7 @@ export default function Top() {
             </Link>
           </li>
 
-          <li
+          <ul
             className={styles.li}
             onMouseOver={() => setVisible(true)}
             onMouseLeave={() => setVisible(false)}
@@ -66,7 +66,7 @@ export default function Top() {
               </li>
             )}
             {visible && <UserMenu loggedIn={loggedIn} />}
-          </li>
+          </ul>
         </ul>
       </div>
     </div>

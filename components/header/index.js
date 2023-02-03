@@ -1,3 +1,4 @@
+import Main from "./Main";
 import React from "react";
 import Promo from "./promo";
 import styles from "./styles.module.scss";
@@ -8,6 +9,7 @@ function Header() {
     <header className={styles.header}>
       <Promo />
       <Top />
+      <Main />
       {/* <h1>Header</h1> */}
     </header>
   );
