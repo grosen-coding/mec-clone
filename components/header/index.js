@@ -4,12 +4,12 @@ import Promo from "./promo";
 import Main from "./Main";
 import Top from "./Top";
 
-function Header() {
+function Header({ country }) {
   return (
     <>
       <header className={styles.header}>
         <Promo />
-        <Top />
+        <Top country={country} />
         <Main />
         {/* <h1>Header</h1> */}
       </header>

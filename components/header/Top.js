@@ -8,7 +8,7 @@ import { useState } from "react";
 
 import UserMenu from "./UserMenu";
 
-export default function Top() {
+export default function Top({ country }) {
   const [visible, setVisible] = useState(false);
 
   const [loggedIn, setLoggedIn] = useState(true);
@@ -18,13 +18,8 @@ export default function Top() {
         <div></div>
         <ul className={styles.top__list}>
           <li className={styles.li}>
-            <Image
-              width={100}
-              height={100}
-              src="/../public/images/can-icon.jpg"
-              alt="Can flag"
-            />
-            <span>Canada / CAN</span>
+            <Image width={100} height={100} src={country.flag} alt="Can flag" />
+            <span>{country.name}</span>
           </li>
           <li className={styles.li}>
             <MdSecurity />
@@ -47,9 +42,10 @@ export default function Top() {
             className={styles.li}
             onMouseOver={() => setVisible(true)}
             onMouseLeave={() => setVisible(false)}
+            style={{ cursor: "pointer", zIndex: 999999 }}
           >
             {loggedIn ? (
-              <li className={styles.li}>
+              <li className={styles.li} onClick={() => setVisible(!visible)}>
                 <div className={styles.flex}>
                   <RiAccountPinCircleLine />
                   <span>User Name</span>
@@ -57,7 +53,7 @@ export default function Top() {
                 </div>
               </li>
             ) : (
-              <li className={styles.li}>
+              <li className={styles.li} onClick={() => setVisible(!visible)}>
                 <div className={styles.flex}>
                   <RiAccountPinCircleLine />
                   <span>Account</span>
