@@ -4,10 +4,14 @@ import { BsSuitHeart } from "react-icons/bs";
 import { RiAccountPinCircleLine, RiArrowDropDownFill } from "react-icons/ri";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
-// import UserMenu from "./UserMenu";
+import UserMenu from "./UserMenu";
 
 export default function Top() {
+  const [visible, setVisible] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <div className={styles.top}>
       <div className={styles.top__container}>
@@ -39,12 +43,29 @@ export default function Top() {
             </Link>
           </li>
 
-          <li className={styles.li}>
-            <div className={styles.flex}>
-              <RiAccountPinCircleLine />
-              <span>Account</span>
-              <RiArrowDropDownFill />
-            </div>
+          <li
+            className={styles.li}
+            onMouseOver={() => setVisible(true)}
+            onMouseLeave={() => setVisible(false)}
+          >
+            {loggedIn ? (
+              <li className={styles.li}>
+                <div className={styles.flex}>
+                  <RiAccountPinCircleLine />
+                  <span>User Name</span>
+                  <RiArrowDropDownFill />
+                </div>
+              </li>
+            ) : (
+              <li className={styles.li}>
+                <div className={styles.flex}>
+                  <RiAccountPinCircleLine />
+                  <span>Account</span>
+                  <RiArrowDropDownFill />
+                </div>
+              </li>
+            )}
+            {visible && <UserMenu loggedIn={loggedIn} />}
           </li>
         </ul>
       </div>
